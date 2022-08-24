@@ -1,0 +1,75 @@
+/*
+filename: lab03.css
+author: utkarsh kr
+created: August 17
+last modified: August 19
+description: lab03.html
+*/
+
+* {
+    font-family: Calibri, sans-serif;
+    color: #2f4f4f;
+}
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: purple;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    color: rgb(0, 128, 128);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+aside, footer {
+    font-style: italic;
+}
+
+aside:hover {
+    visibility: hidden;
+    border-color: lightblue;
+    border-radius: 1px solid darkblue;
+}
+
+
+table {
+    border: 1px solid black;
+}
+
+#images {
+    text-align: center;
+}
+
+#red_head {
+    color: red;
+}
+
+.special {
+    color: darkorange;
+    font-weight: bold;
+}
+
+.month {
+    text-align: right;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0.2em 0.6em;
+    border: 4px solid #ccc;
+}
+
+ol {
+    list-style-type: lower-roman;
+}
+
+ol ul {
+    list-style-type: square;
+}
+

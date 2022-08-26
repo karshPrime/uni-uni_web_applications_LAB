@@ -1,0 +1,53 @@
+
+
+@media screen and (min-width: 31.25em) {
+    
+    nav ul li {
+        width: 33%;
+    }
+
+    #section1, #section2  {
+        width: 43%;
+    }
+
+    #section3 {
+        clear: both;
+        float: none;
+        width: 90%;
+        margin: 0 1em 1em 1.5em;
+    }
+
+    #section3 img {
+        float: left;
+        width: 30%;
+        margin: 0.5em 1em 1em 0;
+    }
+
+    article {
+        min-width: 600px;
+    }
+}
+
+@media screen and (max-width: 31.25em) {
+
+    header h1 {
+        font-size: 28px;
+        padding: 0;
+        text-align: center;
+        color: red;
+    }
+
+    nav ul li {
+        width: 50%;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    article {
+        min-width: none;
+    }
+
+}

@@ -7,8 +7,7 @@ function showAnotherMessage() {
 function init() {
 	yourName = Prompt('Hi. Enter your name.\nWhen the browser window is first loaded\nthe function containing this prompt window is called.", "Your name");
 	clickme = document.getElementById("clickme");
-	clickme.onclick = showAnotherMessage;
-	
-	}
+	clickme.onclick = showAnotherMessage;	
+}
 
 window.onload = init();

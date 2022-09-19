@@ -18,8 +18,7 @@ function writeNewMessage() {
 }
 
 function promptName() {
-    var sName = prompt("Enter your name.\nTHis prompt should show up when the\nClick Me \
-    button is clicked.", "Your name");
+    var sName = prompt("Enter your name.\nTHis prompt should show up when the\nClick Me button is clicked.", "Your name");
     
     alert("Hi there " + sName + ". Alert boxes are quick way to check the state\n\
     of your variables when you are developing code.");

@@ -75,7 +75,30 @@ function validate() {
         alert(errMsg)
     }
 
+    // form validate
+    if (result) {
+        storeBooking(firstname, lastname, age, species, is1day, is4day, is10day);
+    }
+
     return result;
+}
+
+function storeBooking(firstname, lastname, age, species, is1day, is4day, is10day) {
+    // get values and assign them to a sessionStorage attribute
+    // we use te same name for the attrinbute and the element id to avoid confusion
+    var trip = "";
+    if(is1day) trip = "1day";
+    if(is4day) trip += ", 4day";
+    if(is10day) trip += ", 10day";
+    sessionStorage.trip = trip;
+    sessionStorage.firstname = firstname;
+    sessionStorage.lastname = lastname;
+    sessionStorage.age = age;
+    sessionStorage.species = species;
+    sessionStorage.food = getElementById("food").value;
+    sessionStorage.partySize = getElementById("partySize").value;
+
+    alert("Trip stored: " + sessionStorage.trip); // for testing
 }
 
 function getSpecies() {
@@ -117,10 +140,38 @@ function checkSpeciesAge(age) {
     return errMsg;
 }
 
+function prefill_form() {
+    if (sessionStorage.firstname != undefined) {
+        document.getElementById("firstname").value = sessionStorage.firstname;
+        document.getElementById("lastname").value = sessionStorage.lastname;
+        document.getElementById("age").value = sessionStorage.age;
+        document.getElementById("species").value = sessionStorage.species;
+        document.getElementById("trip").value = sessionStorage.trip;
+        document.getElementById("food").value = sessionStorage.food;
+        document.getElementById("partySize").value = sessionStorage.partySize;
+        document.getElementById("cost").value = sessionStorage.cost;
+
+        switch (localStorage.species) {
+            case "Human":
+                document.getElementById("human").checked = true;
+                break;
+            case "Dwarf":
+                document.getElementById("dwarf").checked = true;
+                break;
+            case "Hobbit":
+                document.getElementById("hobbit").checked = true;
+                break;
+            case "Elf":
+                document.getElementById("elf").checked = true;
+                break;
+        }
+    }
+}
 
 function init() {
     var regForm = document.getElementById("regform");
     regForm.onsubmit = validate;
+    prefill_form;
 }
 
 window.onload = init;

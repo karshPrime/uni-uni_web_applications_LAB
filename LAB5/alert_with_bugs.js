@@ -5,9 +5,9 @@ function showAnotherMessage() {
 }
 
 function init() {
-	yourName = Prompt("Hi. Enter your name.\nWhen the browser window is first loaded\nthe function containing this prompt window is called.", "Your name");
+	yourName = prompt("Hi. Enter your name.\nWhen the browser window is first loaded\nthe function containing this prompt window is called.", yourName);
 	clickme = document.getElementById("clickme");
 	clickme.onclick = showAnotherMessage;	
 }
 
-window.onload = init();
+window.onload = init;

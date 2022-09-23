@@ -1,4 +1,5 @@
-/*
+
+ /*
    JavaScript used with 'average.html'
    Use an interactive debugger to find the errors in the JavaScript below
 */
@@ -17,12 +18,14 @@ var calculateButton = null;
 function enterNumber(){
 	var number = prompt("Enter your number");
 	var number = Number(number);   //WHAT DOES THIS LINE DO?
+	
 	if (!isFinite(number)) {    // test what is entered is a number   
 		numbers.push(number);   //add the number entered to the end of the array 
 	}
 	else{
 		alert("Please enter a valid number");
 	}
+	
 	document.getElementById("numberList").innerHTML = "The numbers you have entered so far are: " + numbers;  //diplay a list of number entered
 	enterButton.textContent = "Enter your next number";	//change the label on the Enter Button
 	calculateButton.style.visibility = "visible";     //show the button  - uses the CSS property of the elenment
@@ -41,13 +44,11 @@ function calculateAverage(){
 }
 
 function init(){
-		enterButton = document.getElementById("enter");  
-		calculateButton = document.getElementById("Calculate");
-		calculateButton.style.visibility = "hidden";    //hide the Calculate button until some numbers are entered
-		enterButton.onclick = enterNumber;
-		calculateButton.onclick = calculateAverage;
-		
-	
+	enterButton = document.getElementById("enter");  
+	calculateButton = document.getElementById("Calculate");
+	calculateButton.style.visibility = "hidden";    //hide the Calculate button until some numbers are entered
+	enterButton.onclick = enterNumber;
+	calculateButton.onclick = calculateAverage;
 }
 
 window.onload = init;

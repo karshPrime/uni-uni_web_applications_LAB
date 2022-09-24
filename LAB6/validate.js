@@ -77,7 +77,8 @@ function validate() {
 
     // form validate
     if (result) {
-        storeBooking(firstname, lastname, age, species, is1day, is4day, is10day);
+        var selectedSpecies = getSpecies();
+        storeBooking(firstname, lastname, age, selectedSpecies, is1day, is4day, is10day);
     }
 
     return result;
@@ -95,8 +96,8 @@ function storeBooking(firstname, lastname, age, species, is1day, is4day, is10day
     sessionStorage.lastname = lastname;
     sessionStorage.age = age;
     sessionStorage.species = species;
-    sessionStorage.food = getElementById("food").value;
-    sessionStorage.partySize = getElementById("partySize").value;
+    sessionStorage.food = document.getElementById("food").value;
+    sessionStorage.partySize = document.getElementById("partySize").value;
 
     alert("Trip stored: " + sessionStorage.trip); // for testing
 }

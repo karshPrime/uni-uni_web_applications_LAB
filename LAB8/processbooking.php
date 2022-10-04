@@ -9,13 +9,20 @@
 <body>
     <h1>Rohirrim Tour Booking Confirmation</h1>
     <?php
+        function sanitise_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
         // check if process was triggered by a form submit, if not display an error message
         if ( isset($_POST["firstname"]) ) {
-            $firstname = $_POST["firstname"];
-            if (isset($_POST["lastname"]))  $lastname = $_POST["lastname"];
-            if (isset($_POST["age"]))       $age  =  $_POST["age"];
-            if (isset($_POST["food"]))      $food =  $_POST["food"];
-            if (isset($_POST["partySize"])) $partySize = $_POST["partySize"];
+            $firstname = sanitise_input($_POST["firstname"]);
+            if (isset($_POST["lastname"]))  $lastname  = sanitise_input($_POST["lastname"]);
+            if (isset($_POST["age"]))       $age       = sanitise_input($_POST["age"]);
+            if (isset($_POST["food"]))      $food      = sanitise_input($_POST["food"]);
+            if (isset($_POST["partySize"])) $partySize = sanitise_input($_POST["partySize"]);
 
             // tour
             $tour = "";
@@ -25,7 +32,7 @@
 
             // species
             if (isset($_POST["species"])) {
-                $species = $_POST["species"];
+                $species = sanitise_input($_POST["species"]);
             } else {
                 $species = "Unknown Species";
             }

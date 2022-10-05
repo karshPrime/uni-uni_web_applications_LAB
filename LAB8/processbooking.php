@@ -38,6 +38,26 @@
                 $species = "Unknown Species";
             }
 
+            // validation
+            $errMsg = "";
+            if ($firstname == "") {
+                $errMsg .= "<p>You must enter your first name.</p>";
+            } elseif (!preg_match("/^[a-zA-Z]*$/", $firstname)) {
+                $errMsg .= "<p>Only alpha letters allowed in your first name.</p>";
+            } 
+
+            if ($lastname == "") {
+                $errMsg .= "<p>You must enter your last name.</p>";
+            } elseif (!preg_match("/^[a-zA-Z\-]*$/", $lastname)) {
+                $errMsg .= "<p>Only alpha letters and hyphens allowed in your last name.</p>";
+            }
+
+            if (!is_numeric($age)) {
+                $errMsg .= "<p>Age must be a number</p>";
+            } elseif ($age < 10 || $age > 10000) {
+                $errMsg .= "<p>Age must be between 10 and 10000</p>";
+            }
+
             // print data
             echo "
                 <p>Welcome $firstname $lastname</p>;

@@ -13,6 +13,7 @@
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
+
             return $data;
         }
 
@@ -36,13 +37,15 @@
             } else {
                 $species = "Unknown Species";
             }
-            
+
             // print data
-            echo "<p>Welcome $firstname $lastname</p>";
-            echo "<p> You are booked on the $tour tours</p>";
-            echo "<p> Species: $species</p>";
-            echo "<p> Meal Preference: $food</p>";
-            echo "<p> Number of travellers: $partySize</p>";
+            echo "
+                <p>Welcome $firstname $lastname</p>;
+                <p> You are booked on the $tour tours</p>;
+                <p> Species: $species</p>;
+                <p> Meal Preference: $food</p>;
+                <p> Number of travellers: $partySize</p>
+            ";
 
         } else {
             // Display error message, if process not triggered by a form submit

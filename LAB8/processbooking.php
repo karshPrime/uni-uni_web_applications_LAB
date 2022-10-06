@@ -68,8 +68,8 @@
             ";
 
         } else {
-            // Display error message, if process not triggered by a form submit
-            echo "<p>Error: Enter data in the <a href=\"register.html\">form</a></p>";
+            // Redirect to form if process not triggered by a form submit
+            header("location: register.html");
         }
         
     ?>

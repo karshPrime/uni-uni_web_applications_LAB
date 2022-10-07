@@ -59,13 +59,17 @@
             }
 
             // print data
-            echo "
-                <p>Welcome $firstname $lastname</p>;
-                <p> You are booked on the $tour tours</p>;
-                <p> Species: $species</p>;
-                <p> Meal Preference: $food</p>;
-                <p> Number of travellers: $partySize</p>
-            ";
+            // Display Output
+            if ($errMsg != "") {
+                echo "$errMsg";
+            } else {
+                echo "<p>Welcome $firstname $lastname!</p>";
+                echo "<p>You are now booked on the $tour</p>";
+                echo "<p>Species: $species</p>";
+                echo "<p>Age: $age</p>";
+                echo "<p>Meal Preference: $food</p>";
+                echo "<p>Number of travellers $partySize</p>";
+            }
 
         } else {
             // Redirect to form if process not triggered by a form submit

@@ -59,7 +59,6 @@
             }
 
             // print data
-            // Display Output
             if ($errMsg != "") {
                 echo "$errMsg";
             } else {

@@ -32,7 +32,7 @@
             }
 
             if ($_GET["carmodel"]!=""){
-                $model = $_GET["carmodel"]) 
+                $model = $_GET["carmodel"];
                 if ($query != ""){ $query .= "AND "; }
                 $query .= "model='$model' ";
             }

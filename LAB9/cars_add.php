@@ -25,10 +25,10 @@
             $sql_table = "cars";
 
             // set data
-            $make = $_POST["carmake"];
-            $model = $_POST["carmodel"];
-            $price = $_POST["price"];
-            $yom = $_POST["yom"];
+            $make = htmlspecialchars(trim($_POST["carmake"]));
+            $model = htmlspecialchars(trim($_POST["carmodel"]));
+            $price = htmlspecialchars(trim($_POST["price"]));
+            $yom = htmlspecialchars(trim($_POST["yom"]));
             
             // SQL insert command
             $query = "INSERT INTO $sql_table (make, model, price, yom) VALUES 
